@@ -1,0 +1,23 @@
+{
+  "name": "suspense",
+  "version": "0.0.0",
+  "description": "Expense sharing app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jatins/suspense"
+  },
+  "author": "Jatin Shridhar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jatins/suspense/issues"
+  },
+  "homepage": "https://github.com/jatins/suspense",
+  "dependencies": {
+    "express": "^4.8.1",
+    "logfmt": "^1.1.2"
+  }
+}
