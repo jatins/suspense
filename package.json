@@ -20,7 +20,8 @@
     "body-parser": "^1.6.5",
     "cors": "^2.4.1",
     "express": "^4.8.1",
-    "logfmt": "^1.1.2"
+    "logfmt": "^1.1.2",
+    "mongojs": "^0.14.0"
   },
   "engines": {
     "node": "0.10.30"
