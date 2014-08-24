@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/jatins/suspense",
   "dependencies": {
+    "body-parser": "^1.6.5",
+    "cors": "^2.4.1",
     "express": "^4.8.1",
     "logfmt": "^1.1.2"
   },
