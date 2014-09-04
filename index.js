@@ -3,6 +3,7 @@ var logfmt = require('logfmt');
 var auth = require('./auth');
 var cors = require('cors');
 var Config = require('./Config');
+var Env = require('./env');
 
 var app = express();
 var paymentLib = require('./paymentLib');
@@ -10,7 +11,7 @@ var paymentLib = require('./paymentLib');
 app.use(logfmt.requestLogger());
 
 app.all('*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", Config.clientUrl_prod);
+  res.header("Access-Control-Allow-Origin", Config[Env.Current_Environment]['clientUrl']);
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   res.header("Access-Control-Allow-Headers", "Content-Type");
   res.header("Access-Control-Allow-Credentials", "true");

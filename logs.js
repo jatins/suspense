@@ -1,6 +1,8 @@
 var mongojs = require('mongojs');
 var Config = require('./Config')
-var db = mongojs(Config.dbUrl_prod, ['payments']);
+var Env = require('./env');
+
+var db = mongojs(Config[Env.Current_Environment]['dbUrl'], ['payments']);
 
 exports.details = function(first, second, callback) {
 	var expCriteria = {};

@@ -1,15 +1,13 @@
 var check = require("check-type").init();
 var moment = require('moment');
 var Config = require('./Config');
+var Env = require('./env');
 
 var mongojs = require('mongojs');
-var db = mongojs(Config.dbUrl_prod, ['payments']);
+var db = mongojs(Config[Env.Current_Environment]['dbUrl'], ['payments']);
 
 function validate(amount, paidBy, paidTo, paidOnDate, reason) {
-	if(arguments.length !== 5) {
-		console.log("[ERROR]: expected 5 arguemtns")
-		return ;
-	} 
+	console.log(amount);
 
 	return  check(amount).is("number") &&
 			check(paidBy).is("string") &&

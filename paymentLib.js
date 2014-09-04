@@ -1,6 +1,8 @@
 var Payment = require('./Payment');
 
 exports.addPayment = function(params, callback) {
+	console.log(params);
+	
 	var amount = params.amount,
 		paidBy = params.paidBy,
 		paidTo = params.paidTo,
