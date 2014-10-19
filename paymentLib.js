@@ -1,6 +1,8 @@
 var Payment = require('./Payment');
 
-exports.addPayment = function(params, callback) {
+var co = require('co');
+
+exports.addPayment = function *(params) {
 	console.log(params);
 	
 	var amount = params.amount,
@@ -9,13 +11,15 @@ exports.addPayment = function(params, callback) {
 		paidOnDate = params.paidOnDate,
 		reason = params.reason;
 
-	var payment = new Payment(amount, paidBy, paidTo, paidOnDate, reason);
-	console.log('Payment:' + payment);
-	payment.save(function(err, saved_payment) {
-		if(err) {
-			callback(err, null);
-		} else {
-			callback(null, saved_payment);
-		}
-	})
-}
+	try {
+		var payment = new Payment(amount, paidBy, paidTo, paidOnDate, reason);
+		console.log('Payment:' + payment);
+
+		var saved_payment = yield payment.save();
+		return saved_payment;
+	} catch (e) {
+		console.error("[ERROR]: ", e);
+		throw e;
+		return null;
+	}
+};
