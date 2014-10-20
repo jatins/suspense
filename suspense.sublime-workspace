@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"cle",
+				"clearLogModel"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"a",
+				"arguments"
+			],
+			[
+				"cl",
+				"clearId"
+			],
+			[
+				"ex",
+				"expCriteria"
+			],
+			[
+				"sa",
+				"saved_object"
+			],
+			[
+				"clear",
+				"ClearLogModel"
+			],
+			[
+				"save",
+				"saved_object"
+			],
+			[
+				"sav",
+				"save_callback"
+			],
+			[
+				"in",
+				"insert"
+			],
+			[
 				"co",
 				"corsOptions"
 			],
@@ -44,10 +84,6 @@
 				"server"
 			],
 			[
-				"re",
-				"response"
-			],
-			[
 				"res",
 				"response"
 			],
@@ -71,15 +107,19 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 187.0,
+		"height": 87.0,
 		"selected_items":
 		[
+			[
+				"comm",
+				"Toggle Block Comment"
+			],
 			[
 				"inst",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 449.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -98,10 +138,26 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/Users/jshridha/Code/suspense"
+	],
 	"file_history":
 	[
-		"/Users/jshridha/Code/suspense/suspense.sublime-project",
+		"/Users/jshridha/Code/suspense/mongo-test.js",
+		"/Users/jshridha/Code/suspense/logs.js",
+		"/Users/jshridha/Code/suspense/ClearLogModel.js",
+		"/Users/jshridha/.zshrc",
+		"/Users/jshridha/.cling_history",
+		"/Users/jshridha/.bash_profile",
+		"/Users/jshridha/Code/suspense/env.js",
+		"/Users/jshridha/Code/suspense/Payment.js",
 		"/Users/jshridha/Code/suspense/index.js",
+		"/Users/jshridha/Code/suspense/.gitignore",
+		"/Users/jshridha/Code/suspense/auth.js",
+		"/Users/jshridha/Code/suspense/Config.js",
+		"/Users/jshridha/Code/suspense/paymentLib.js",
+		"/Users/jshridha/Code/suspense/suspense.sublime-project",
 		"/Users/jshridha/Code/jatins.github.com/suspense/src/login/index.js",
 		"/Users/jshridha/Code/jatins.github.com/suspense/index.html",
 		"/Users/jshridha/Code/jatins.github.com/suspense/src/login/template.html",
@@ -130,7 +186,6 @@
 		"/Users/jshridha/Code/vue-browserify-example/src/main.js",
 		"/Users/jshridha/Code/vue-browserify-example/dist/bundle.js",
 		"/Users/jshridha/Code/vue-browserify-example/src/app.html",
-		"/Users/jshridha/Code/suspense/auth.js",
 		"/Users/jshridha/Code/vue-component-example/index.html",
 		"/Users/jshridha/Code/vue-component-example/component.json",
 		"/Users/jshridha/Code/vue-component-example/package.json",
@@ -144,7 +199,6 @@
 		"/Users/jshridha/Library/Application Support/Sublime Text 3/Packages/User/sftp_servers/jshridha-1",
 		"/Users/jshridha/Code/test/.gitattributes",
 		"/Users/jshridha/Code/test/.gitignore",
-		"/Users/jshridha/Code/suspense/.gitignore",
 		"/Users/jshridha/Code/suspense/package.json",
 		"/Users/jshridha/Code/suspense/Procfile",
 		"/Users/jshridha/Code/firebase-app/index.js",
@@ -200,7 +254,7 @@
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -215,6 +269,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"successfully found the",
+			"print",
+			"here",
+			"0]",
+			"first",
+			"here",
+			"akhil",
+			"ClearLogModel",
+			"second",
+			"clearLogModel",
+			"save_callback",
+			"date",
+			"Error in inserting",
+			"else",
+			"amo",
 			"header",
 			"p",
 			"header",
@@ -345,6 +414,14 @@
 		"selected_items":
 		[
 			[
+				"lo",
+				"logs.js"
+			],
+			[
+				"en",
+				"env.js"
+			],
+			[
 				"inde",
 				"suspense-client/index.html"
 			],
@@ -403,6 +480,7 @@
 		],
 		"width": 392.0
 	},
+	"selected_group": 0,
 	"settings":
 	{
 	},

@@ -6,7 +6,7 @@ var Env = require('./env');
 
 var db = mongojs(Config[Env.Current_Environment]['dbUrl'], ['payments']);
 
-var ClearLogModel = require('./ClearLogModel');
+// var ClearLogModel = require('./ClearLogModel');
 
 var comongo = require('co-mongo');
 var co = require('co');
@@ -55,7 +55,7 @@ exports.details = function *(first, second) {
 	}
 };
 
-exports.latestDetails = function latestDetails(clearLogModel, callback) {
+/*exports.latestDetails = function latestDetails(clearLogModel, callback) {
 	if(arguments.length === 3) {
 		var first = arguments[0],
 			second = arguments[1],
@@ -115,4 +115,5 @@ exports.latestDetails = function latestDetails(clearLogModel, callback) {
 
 }
 	
-}
+}*/
+
