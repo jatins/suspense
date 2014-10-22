@@ -37,7 +37,7 @@ Payment.prototype.save = function *() {
     console.log("this ", this);
 
     try {
-    	var db = yield comongo.connect(Config[Env.Current_Environment].dbUrl);
+    	var db = yield comongo.connect(Config[Env.db_env].dbUrl);
 	  	var payments = yield db.collection('payments');
 
 	  	var saved_payment = yield payments.insert(this);

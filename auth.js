@@ -7,4 +7,4 @@ exports.isValidUser = function(username, pwd) {
 		return 0;
 
 	return 1;
-}
+};
