@@ -1,4 +1,4 @@
 module.exports = {
 	Current_Environment: 'Prod',
-	db_env: 'Local'
+	db_env: 'Prod'
 };
