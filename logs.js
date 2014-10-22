@@ -4,14 +4,32 @@ var mongojs = require('mongojs');
 var Config = require('./Config')
 var Env = require('./env');
 
-var db = mongojs(Config[Env.Current_Environment]['dbUrl'], ['payments']);
+var cache = require('./simple-cache');
 
-// var ClearLogModel = require('./ClearLogModel');
+var cacheInstance = cache.instance,
+    LogKey        = cache.LogKey,
+    LogValue      = cache.LogValue;
 
 var comongo = require('co-mongo');
 var co = require('co');
 
+
+/**
+ * 			
+ * @param  {string} first
+ * @param  {string} second
+ * @return {object}
+ */
 exports.details = function *(first, second) {
+    var key = new LogKey(first, second);
+    var value = cacheInstance.read(key);
+
+    if(value) {
+        return value;
+    }
+
+    console.log("Fetching from db instead...");
+
 	var expCriteria = {};
 	expCriteria['paidBy'] = first;
 	expCriteria['paidTo.' + second] = {$gt: 0};
@@ -20,18 +38,16 @@ exports.details = function *(first, second) {
 	expProjection['paidTo.' + second] = 1;
 	expProjection['reason'] = 1;
 
-
 	var consumptionCriteria = {};
 	consumptionCriteria['paidBy'] = second;
 	consumptionCriteria['paidTo.' + first] = {$gt: 0};
-
 
 	var conProjection = {};
 	conProjection['paidTo.' + first] = 1;
 	conProjection['reason'] = 1;
 
 	try {
-		var db = yield comongo.connect(Config[Env.Current_Environment].dbUrl);
+		var db = yield comongo.connect(Config[Env.db_env].dbUrl);
 		var payments = yield db.collection('payments');
 
 		var expenditure = payments.find(expCriteria, expProjection).toArray();
@@ -42,13 +58,12 @@ exports.details = function *(first, second) {
 		expenditure = result[0];
 		consumption = result[1];
 		
-		var obj = {
-			consumption: consumption,
-			expenditure: expenditure
-		};
+		value = new LogValue(consumption, expenditure);
+
+        cacheInstance.write(key, value);
 
 		yield db.close();
-		return obj;
+		return value;
 	} catch(e) {
 		console.error(e);
 		throw e;

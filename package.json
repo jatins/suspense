@@ -21,6 +21,7 @@
     "check-type": "^0.4.11",
     "cors": "^2.4.1",
     "express": "^4.8.1",
+    "graph": "^0.2.0",
     "logfmt": "^1.1.2",
     "moment": "^2.8.2",
     "mongojs": "^0.14.0"
